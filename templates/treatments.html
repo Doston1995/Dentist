@@ -43,13 +43,21 @@
             <h1> Ma'lumot topilmadi!!! </h1>
             {% endif %}
             <div class="pagination_section">
-                <a href="#"><<</a>
-                <a href="#" title="Algorithm">1</a>
-                <a href="#" title="DataStructure">2</a>
-                <a href="#" title="Languages">3</a>
-                <a href="#" title="Interview">4</a>
-                <a href="#" title="practice">5</a>
-                <a href="#">>></a>
+                {% if treatments.has_other_pages %}
+                    {% if treatments.has_previous %}
+                        <a href="?page={{ treatments.previous_page_number }}">&laquo;</a>
+                    {% endif %}
+                    {% for i in treatments.paginator.page_range %}
+                        {% if treatments.number == i %}
+                            <a href="" class="active">{{ i }}</a>
+                        {% else %}
+                            <a href="?page={{ i }}">{{ i }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if treatments.has_next %}
+                        <a href="?page={{ treatments.next_page_number }}">&raquo;</a>
+                    {% endif %}
+                {% endif %}
             </div>
             <div class="clr"></div>
         </div>

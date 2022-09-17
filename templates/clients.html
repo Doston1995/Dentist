@@ -45,13 +45,21 @@
             
             {% endif %}
             <div class="pagination_section">
-                <a href="#"><<</a>
-                <a href="#" title="Algorithm">1</a>
-                <a href="#" title="DataStructure">2</a>
-                <a href="#" title="Languages">3</a>
-                <a href="#" title="Interview">4</a>
-                <a href="#" title="practice">5</a>
-                <a href="#">>></a>
+                {% if clients.has_other_pages %}
+                    {% if clients.has_previous %}
+                        <a href="?page={{ clients.previous_page_number }}">&laquo;</a>
+                    {% endif %}
+                    {% for i in clients.paginator.page_range %}
+                        {% if clients.number == i %}
+                            <a href="" class="active">{{ i }}</a>
+                        {% else %}
+                            <a href="?page={{ i }}">{{ i }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if clients.has_next %}
+                        <a href="?page={{ clients.next_page_number }}">&raquo;</a>
+                    {% endif %}
+                {% endif %}
             </div>
             <div class="clr"></div>
         </div>
