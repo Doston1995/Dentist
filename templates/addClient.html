@@ -1,0 +1,52 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
+    <title>Add Client</title>
+</head>
+<body>
+  <div class="form_wrapper">
+    <div class="form_container">
+      <div class="title_container">
+        <h2>Mijoz qo'shish</h2>
+      </div>
+      <div class="row clearfix">
+        <div class="">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input_field"> <span><i aria-hidden="true" class="fas fa-user"></i></span>
+              {{form.lastname}}
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fas fa-user"></i></span>
+              {{form.firstname}}
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fas fa-user"></i></span>
+              {{form.patronym}}
+            </div>
+            <div class="input_field">
+              <label> Tug'ilgan sana: </label>
+              {{form.birthday}}
+            </div>
+              
+            <div class="input_field">
+              <label> Jinsi: </label>
+              {{form.gender}}
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fas fa-phone"></i></span>
+              {{form.phoneNumber}}
+            </div>
+            <div class="input_field">
+              {{form.image}}
+            </div>
+              <input class="button" type="submit" value="Qo'shish" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

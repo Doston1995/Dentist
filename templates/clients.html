@@ -1,0 +1,60 @@
+{%extends 'base.html' %}
+{% block content %}
+<section class="main">
+    <div class="main-top">
+        <h1>Mijozlar</h1>
+    </div>
+    <section class="attendance">
+        <div class="attendance-list">
+            <div class="searchForm">
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <input type="search" class="search" name="q" placeholder="Qidirish" />
+                    <button class="search-btn" type="submit"> <i class="fa fa-search"></i> Qidirish</button>
+                </form>
+            </div>
+            <a href="{% url 'addClient' %}" class="add-btn"> <i class='fas fa-plus'></i> Qo'shish</a>
+            {% if clients %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>F.I.O</th>
+                        <th>Tug'ilgan kuni</th>
+                        <th>Telefon raqami</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for client in clients %}
+                    <tr>
+                        <td>{{client.id}}</td>
+                        <td>{{client.lastname}} {{client.firstname}} {{client.patronym}}</td>
+                        <td>{{client.birthday | date:"Y-m-d"}}</td>
+                        <td>{{client.phoneNumber}}</td>
+                        <td>
+                            <button>Shaxsiy kabinet</button>
+                            <button>O'zgartirish</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>    
+            </table>
+            {% else %}
+            <h1> Ma'lumot topilmadi!!! </h1>
+            
+            {% endif %}
+            <div class="pagination_section">
+                <a href="#"><<</a>
+                <a href="#" title="Algorithm">1</a>
+                <a href="#" title="DataStructure">2</a>
+                <a href="#" title="Languages">3</a>
+                <a href="#" title="Interview">4</a>
+                <a href="#" title="practice">5</a>
+                <a href="#">>></a>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </section>
+</section>
+{% endblock %}

@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: rgb(226, 226, 266);
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    width: 90px;
+    background: #fff;
+    overflow: hidden;
+    transition: 1s;
+}
+
+nav:hover{
+    width: 280px;
+    transition: 1s;
+}
+
+.logo {
+    text-align: center;
+    display: flex;
+    margin: 20px 0 0 20px;
+    padding-bottom: 3rem;
+}
+
+.logo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.logo > span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+a{
+    position: relative;
+    width: 280px;
+    font-size: 14px;
+    color: rgb(85, 83, 83);
+    display: table;
+    padding: 10px;
+}
+
+nav .fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+
+/* a:hover{
+    background:#eee
+} */
+
+a:hover i{
+    color: #34AF6D;
+    transition: 0.5s;
+}
+
+.logout{
+    position: absolute;
+    bottom: 0;
+}
+
+.container{
+    display: flex;
+}
+
+/* Main Section */
+
+.main{
+    position: relative;
+    padding: 20px;
+    width: 100%;
+}
+
+.main-top{
+    display: flex;
+    width: 100%;
+}
+
+.main-top i{
+    position: absolute;
+    right: 0;
+    margin: 10px 30px;
+    color: rgb(110, 109, 109);
+    cursor: pointer;
+}
+  
+/* Attendance list section */
+
+.attendance{
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+.attendance-list{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+
+.searchForm{
+    width: 100%;
+    display: flex;
+}
+
+.searchForm form{
+    width: 100%;
+    box-sizing: border-box;
+}
+.search{
+    width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    margin-right: 10px;
+    border: 1px solid #4AD489;
+    border-radius: 10px;
+} 
+
+.search-btn{
+    width: 10%;
+    border: 1px solid #4AD489;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: transparent;
+}
+.search-btn:hover{
+    background: #4AD489;
+    color: #fff;
+    transition: 0.5rem;
+}
+
+.add-btn{
+    float: right;
+    width: 10%;
+    text-align: center;
+    font-size: 15px;
+    border: 1px solid #34AF6D;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.add-btn:hover{
+    background: #4AD489;
+    color: #fff;
+    transition: 0.5rem;
+}
+
+.table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+    min-width: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+
+.table thead tr{
+    color: #fff;
+    background: #34AF6D;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table th, .table td{
+    padding: 12px;
+}
+
+.table tbody tr{
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-of-type(odd){
+    background: #f3f3f3;
+}
+
+.table tbody tr:hover{
+    font-weight: bold;
+    color: #4AD489;
+}
+
+.table tbody tr:last-of-type{
+    border-bottom: 2px solid #4AD489;
+}
+
+.table button{
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #4AD489;
+}
+
+.table button:hover{
+    background: #4AD489;
+    color: #fff;
+    transition: 0.5rem;
+}
+
+.pagination_section {
+    width: 30%;
+    margin: auto;
+}
+
+.pagination_section > a {
+    width: 10%;
+    float: left;
+    color: black;
+    text-align: center;
+    border: 1px solid #4AD489;
+    text-decoration: none;
+}
+
+.pagination_section > a:hover:not(.active) {
+    background-color: #4AD489;
+    color: white;
+}
+.clr{
+    clear: both;
+}

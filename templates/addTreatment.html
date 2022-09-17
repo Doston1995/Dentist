@@ -1,0 +1,37 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
+    <title>Muolaja qo'shish</title>
+</head>
+<body>
+  <div class="form_wrapper">
+    <div class="form_container">
+      <div class="title_container">
+        <h2>Muolaja qo'shish</h2>
+      </div>
+      <div class="row clearfix">
+        <div class="">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="input_field"> <span><i aria-hidden="true" class="fas fa-envelope"></i></span>
+              {{ form.name }}
+            </div>
+            <div class="input_field"> <span><i aria-hidden="true" class="fas fa-envelope"></i></span>
+              {{ form.price }}
+            </div>
+            <div class="input_field">
+              {{ form.description }}
+            </div>
+              <input class="button" type="submit" value="Qo'shish" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
